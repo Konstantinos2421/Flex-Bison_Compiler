@@ -22,5 +22,6 @@ bison –d parser.y
 flex lexer.l
 gcc –o run lex.yy.c parser.tab.c –lfl
 ./run testFile
-
-Find cygwin to install Flex-Bison in: [https://cygwin.com/](https://cygwin.com/)
+  
+These steps must be executed in Cygwin terminal. The link for downloading Cygwin to install terminal and Flex-Bison is the following:
+[https://cygwin.com/](https://cygwin.com/)
