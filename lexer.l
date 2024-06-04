@@ -5,7 +5,7 @@
 
 layout_width	  "android:layout_width"
 layout_height	  "android:layout_height"
-id				      "android:id"
+id			"android:id"
 orientation		  "android:orientation"
 text			      "android:text"
 textColor		    "android:textColor"
