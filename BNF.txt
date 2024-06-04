@@ -1,0 +1,35 @@
+/*General*/
+<element> ::= <LinearLayout> | <RelativeLayout> | <TextView> | <ImageView> | <Button> | <RadioGroup> | <ProgressBar> | <comment>
+<string> ::= ([A-Z] | [a-z] | [0-9] | "!" | "@" | "#" | "$" | "%" | "^" | "&" | "*" | "(" | ")" | "-" | "_" | "=" | "+" | "," | "." | "<" | ">" | "/" | "?" | ";" | ":" | "'" | "|" | "\\" | "[" | "]" | "{" | "}" | "`" | "~" | " " | "\t")+
+<number> ::= [1-9] [0-9]*
+<gap> ::= (" " | "\t" | "\n")+
+
+/*Attributes*/
+<layout_width> ::= <comment>* "android:layout_width=\"" ("wrap_content" | "match_parent" | <number>) "\"" <comment>*
+<layout_height> ::= <comment>* "android:layout_height=\"" ("wrap_content" | "match_parent" | <number>) "\"" <comment>*
+<id> ::= <comment>* "android:id=\"" <string> "\"" <comment>*
+<orientation> ::= <comment>* "android:orientation=\"" <string> "\"" <comment>*
+<text> ::= <comment>* "android:text=\"" <string> "\"" <comment>*
+<textColor> ::= <comment>* "android:textColor=\"" <string> "\"" <comment>*
+<src> ::= <comment>* "android:src=\"" <string> "\"" <comment>*
+<padding> ::= <comment>* "android:padding=\"" <number> "\"" <comment>*
+<checkedButton> ::= <comment>* "android:checkedButton=\"" <string> "\"" <comment>*
+<progress> ::= <comment>* "android:progress=\"" <number> "\"" <comment>*
+<max> ::= <comment>* "android:max=\"" <number> "\"" <comment>*
+<radioButtonsNum> ::= <comment>* "android:radioButtonsNum=\"" <number> "\"" <comment>*
+
+/*Elements*/
+<LinearLayout> ::= "<LinearLayout" <gap> <layout_width> <gap> <layout_height> (<gap> <id>)? (<gap> <orientation>)? <gap>* ">" (<gap> <element>)+ <gap>* "</LinearLayout>"
+<RelativeLayout> ::= "<RelativeLayout" <gap> <layout_width> <gap> <layout_height> (<gap> <id>)? (<gap> <orientation>)? <gap>* ">" (<gap> <element>)+ <gap>* "</RelativeLayout>"
+<TextView> ::= "<TextView" <gap> <layout_width> <gap> <layout_height> <gap> <text> (<gap> <id>)? (<gap> <textColor>)? <gap>* "/>"
+<ImageView> ::= "<ImageView" <gap> <layout_width> <gap> <layout_height> <gap> <src> (<gap> <id>)? (<gap> <padding>)? <gap>* "/>"
+<Button> ::= "<Button" <gap> <layout_width> <gap> <layout_height> <gap> <text> (<gap> <id>)? (<gap> <padding>)? <gap>* "/>"
+<RadioButton> ::= "<RadioButton" <gap> <layout_width> <gap> <layout_height> <gap> <text> (<gap> <id>)? <gap>* "/>"
+<RadioGroup> ::= "<RadioGroup" <gap> <layout_width> <gap> <layout_height> <gap> <radioButtonsNum> (<gap> <id>)? (<gap> <checkedButton>)? <gap>* ">" (<gap> <RadioButton>)+ <gap>* "</RadioGroup>"
+<ProgressBar> ::= "<ProgressBar" <gap> <layout_width> <gap> <layout_height> (<gap> <id>)? (<gap> <max>)? (<gap> <progress>)? <gap>* "/>"
+
+/*Comments*/
+<comment> ::= "<!-- " <string> " -->"
+
+/*Program*/
+<program> ::= (<gap> | <comment>)* (<LinearLayout> | <RelativeLayout>) (<gap> | <comment>)*
