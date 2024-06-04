@@ -25,41 +25,41 @@ comment	"<!-- "[^\"\n]*" -->"
 %option yylineno
 
 %%
-{layout_width} 	  {return LAYOUT_WIDTH;}
-{layout_height}	  {return LAYOUT_HEIGHT;}
-{id}			        {return ID;}
-{orientation}	    {return ORIENTATION;}
-{text}			      {return TEXT;}
-{textColor}		    {return TEXT_COLOR;}
-{src}			        {return SRC;}
-{padding}		      {return PADDING;}
-{checkedButton}	  {return CHECKED_BUTTON;}
-{progress}		    {return PROGRESS;}
-{max}			        {return MAX;}
-{radioButtonsNum}	{return RADIO_BUTTONS_NUM;}
+{layout_width}     {return LAYOUT_WIDTH;}
+{layout_height}    {return LAYOUT_HEIGHT;}
+{id}               {return ID;}
+{orientation}      {return ORIENTATION;}
+{text}             {return TEXT;}
+{textColor}        {return TEXT_COLOR;}
+{src}              {return SRC;}
+{padding}          {return PADDING;}
+{checkedButton}    {return CHECKED_BUTTON;}
+{progress}         {return PROGRESS;}
+{max}              {return MAX;}
+{radioButtonsNum}  {return RADIO_BUTTONS_NUM;}
 
-"</"	{return END_TAG_OPENING;}
-"/>"	{return SELF_CLOSING_TAG_CLOSING;}
-"<"		{return OPENING_BRACKET;}
-">"		{return CLOSING_BRACKET;}
-"="		{return '=';}
+"</"   {return END_TAG_OPENING;}
+"/>"   {return SELF_CLOSING_TAG_CLOSING;}
+"<"    {return OPENING_BRACKET;}
+">"    {return CLOSING_BRACKET;}
+"="    {return '=';}
 
-"\"wrap_content\""	{return WRAP_CONTENT;}
-"\"match_parent\""	{return MATCH_PARENT;}
+"\"wrap_content\""  {return WRAP_CONTENT;}
+"\"match_parent\""  {return MATCH_PARENT;}
 
-"LinearLayout"		{ return LINEAR_LAYOUT;}
-"RelativeLayout"	{return RELATIVE_LAYOUT;}
-"TextView"			  {return TEXT_VIEW;}
-"ImageView"			  {return IMAGE_VIEW;}
-"Button"			    {return BUTTON;}
-"RadioButton"		  {return RADIO_BUTTON;}
-"RadioGroup"		  {return RADIO_GROUP;}
-"ProgressBar"		  {return PROGRESS_BAR;}
+"LinearLayout"    {return LINEAR_LAYOUT;}
+"RelativeLayout"  {return RELATIVE_LAYOUT;}
+"TextView"        {return TEXT_VIEW;}
+"ImageView"       {return IMAGE_VIEW;}
+"Button"          {return BUTTON;}
+"RadioButton"     {return RADIO_BUTTON;}
+"RadioGroup"      {return RADIO_GROUP;}
+"ProgressBar"     {return PROGRESS_BAR;}
 
-{number}	{return NUMBER;}
-{string}	{return STRING;}
+{number}  {return NUMBER;}
+{string}  {return STRING;}
 
-{comment}	{ }
-{gap}		{ }
+{comment}  { }
+{gap}      { }
 
 %%
