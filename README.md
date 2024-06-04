@@ -25,13 +25,13 @@ Also the XML language have the following specifications:
 - The RadioButton element appears only nested within a RadioGroup element. It carries the android:text as an additional required attribute, and the android:id as an optional attribute. The android:text and android:id are of alphanumeric type. The content of the element is empty.
 - The ProgressBar element has optional attributes android:id, android:max and android:progress. The android:id is of alphanumeric type, while android:max and android:progress are of positive integer type. The content of the element is empty.
 - At any point in the code, XML comments are supported.
-
+___
 Project files are the following ones:
 - **BNF.txt:** It contains the grammar of the XML language in BNF markup. The compiler designed based on this grammar.
 - **lexer.l:** This file is the lexer of the compiler written in Bison, which makes the lectical analysis of the code.
 - **parser.y:** This file is the parser of the compiler written in Flex, which makes the grammar analysis of the code.
 - **sample_code.txt:** A sample of XML code which is used to check the compiler.
-
+___
 Cmd commands to compile and run the lexer and parser files:  
 bison –d parser.y  
 flex lexer.l  
