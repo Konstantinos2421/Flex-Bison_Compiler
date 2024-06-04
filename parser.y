@@ -122,47 +122,47 @@ src: SRC '=' STRING;
 padding: PADDING '=' NUMBER;
 
 checkedButton: CHECKED_BUTTON '=' STRING	{	
-												checked_button_id = (char*)malloc(strlen(yytext));
-												strcpy(checked_button_id, yytext);
-												checked_button_attribute_line = yylineno;
-											};
+							checked_button_id = (char*)malloc(strlen(yytext));
+							strcpy(checked_button_id, yytext);
+							checked_button_attribute_line = yylineno;
+						};
 
 progress: PROGRESS '=' NUMBER	{
-									char *string_number = (char*)malloc(strlen(yytext));
-									strcpy(string_number, yytext);
-									char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
-									strncpy(number, string_number + 1, strlen(string_number) - 2);
-									progress = atoi(number);
-								};
+					char *string_number = (char*)malloc(strlen(yytext));
+					strcpy(string_number, yytext);
+					char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
+					strncpy(number, string_number + 1, strlen(string_number) - 2);
+					progress = atoi(number);
+				};
 
 max: MAX '=' NUMBER	{
-						char *string_number = (char*)malloc(strlen(yytext));
-						strcpy(string_number, yytext);
-						char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
-						strncpy(number, string_number + 1, strlen(string_number) - 2);
-						max = atoi(number);
-					};
+				char *string_number = (char*)malloc(strlen(yytext));
+				strcpy(string_number, yytext);
+				char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
+				strncpy(number, string_number + 1, strlen(string_number) - 2);
+				max = atoi(number);
+			};
 
 radioButtonsNum: RADIO_BUTTONS_NUM '=' NUMBER	{
-													char *string_number = (char*)malloc(strlen(yytext));
-													strcpy(string_number, yytext);
-													char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
-													strncpy(number, string_number + 1, strlen(string_number) - 2);
-													radio_buttons_num = atoi(number);
-													radio_buttons_num_attribute_line = yylineno;
-												};
+							char *string_number = (char*)malloc(strlen(yytext));
+							strcpy(string_number, yytext);
+							char *number = (char*)malloc((strlen(string_number) - 2) * sizeof(char));
+							strncpy(number, string_number + 1, strlen(string_number) - 2);
+							radio_buttons_num = atoi(number);
+							radio_buttons_num_attribute_line = yylineno;
+						};
 
-attribute: layout_width		{if(layout_width_used == 1) yyerror("Duplicate definition of \"layout_width\" attribute"); layout_width_used = 1;}
+attribute: layout_width			{if(layout_width_used == 1) yyerror("Duplicate definition of \"layout_width\" attribute"); layout_width_used = 1;}
 		 | layout_height	{if(layout_height_used == 1) yyerror("Duplicate definition of \"layout_height\" attribute"); layout_height_used = 1;}
-		 | id				{if(id_used == 1) yyerror("Duplicate definition of \"id\" attribute"); id_used = 1;}
+		 | id			{if(id_used == 1) yyerror("Duplicate definition of \"id\" attribute"); id_used = 1;}
 		 | orientation		{if(orientation_used == 1) yyerror("Duplicate definition of \"orientation\" attribute"); orientation_used = 1;}
-		 | text				{if(text_used == 1) yyerror("Duplicate definition of \"text\" attribute"); text_used = 1;}
+		 | text			{if(text_used == 1) yyerror("Duplicate definition of \"text\" attribute"); text_used = 1;}
 		 | textColor		{if(textColor_used == 1) yyerror("Duplicate definition of \"textColor\" attribute"); textColor_used = 1;}
-		 | src				{if(src_used == 1) yyerror("Duplicate definition of \"src\" attribute"); src_used = 1;}
-		 | padding			{if(padding_used == 1) yyerror("Duplicate definition of \"padding\" attribute"); padding_used = 1;}
+		 | src			{if(src_used == 1) yyerror("Duplicate definition of \"src\" attribute"); src_used = 1;}
+		 | padding		{if(padding_used == 1) yyerror("Duplicate definition of \"padding\" attribute"); padding_used = 1;}
 		 | checkedButton	{if(checkedButton_used == 1) yyerror("Duplicate definition of \"checkedButton\" attribute"); checkedButton_used = 1;}
-		 | progress			{if(progress_used == 1) yyerror("Duplicate definition of \"progress\" attribute"); progress_used = 1;}
-		 | max				{if(max_used == 1) yyerror("Duplicate definition of \"max\" attribute"); max_used = 1;}
+		 | progress		{if(progress_used == 1) yyerror("Duplicate definition of \"progress\" attribute"); progress_used = 1;}
+		 | max			{if(max_used == 1) yyerror("Duplicate definition of \"max\" attribute"); max_used = 1;}
 		 | radioButtonsNum	{if(radioButtonsNum_used == 1) yyerror("Duplicate definition of \"radioButtonsNum\" attribute"); radioButtonsNum_used = 1;}
 		 ;
 
