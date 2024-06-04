@@ -3,16 +3,16 @@
 #include <stdio.h>
 %}
 
-layout_width	  "android:layout_width"
-layout_height	  "android:layout_height"
-id			"android:id"
-orientation		  "android:orientation"
-text			      "android:text"
-textColor		    "android:textColor"
-src				      "android:src"
-padding			    "android:padding"
-checkedButton	  "android:checkedButton"
-progress		    "android:progress"
+layout_width     "android:layout_width"
+layout_height    "android:layout_height"
+id               "android:id"
+orientation      "android:orientation"
+text             "android:text"
+textColor        "android:textColor"
+src              "android:src"
+padding          "android:padding"
+checkedButton    "android:checkedButton"
+progress         "android:progress"
 max              "android:max"
 radioButtonsNum  "android:radioButtonsNum"
 
